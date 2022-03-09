@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.gameContainer {
+  margin: auto;
+  display: grid;
+  grid-template: "clear clear" "board board" "output output";
+  gap: 40px;
+}
+
+.gridContainer {
+  grid-area: board;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.clearContainer {
+  grid-area: clear;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.outputContainer {
+  grid-area: output;
+  display: flex;
+  align-items: flex-end;
+  min-width: 220px;
+}
+
+.output {
+  margin: 0;
+  width: 100%;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .gameContainer {
+    grid-template: "board clear" "board output";
+  }
+}
