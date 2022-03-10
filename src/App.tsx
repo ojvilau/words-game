@@ -33,7 +33,7 @@ function App() {
             <Tile
               text={letter}
               onClick={() => handleSelectLetter(letter, i)}
-              color={lettersSelected.get(i) === letter ? (isValidWord ? "valid" : "invalid") : "unselected"}
+              color={lettersSelected.get(i) === letter ? (isValidWord ? "valid" : "invalid") : "deselected"}
             />
           ))}
         </div>

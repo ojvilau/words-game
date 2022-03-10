@@ -1,7 +1,7 @@
 import styles from "./Tile.module.css";
 
 type TileProps = {
-  color: "valid" | "invalid" | "unselected";
+  color: "valid" | "invalid" | "deselected";
   onClick: () => void;
   text: string;
 };
@@ -9,7 +9,7 @@ type TileProps = {
 const bgColorMap = {
   valid: "linear-gradient(#B1EA4F, #459623)",
   invalid: "linear-gradient(#F5515F, #A0051C)",
-  unselected: "linear-gradient(#FACF5B, #F77221)",
+  deselected: "linear-gradient(#FACF5B, #F77221)",
 };
 
 export default function Tile({ color, onClick, text }: TileProps) {
@@ -19,7 +19,7 @@ export default function Tile({ color, onClick, text }: TileProps) {
       className={styles.tile}
       style={{
         background: bgColorMap[color],
-        border: color === "unselected" ? "2px solid #F5515F" : "none",
+        border: color === "deselected" ? "2px solid #F5515F" : "none",
       }}
     >
       {text}
